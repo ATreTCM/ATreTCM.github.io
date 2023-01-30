@@ -1,0 +1,215 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1em;
+  color: #a3bfda;
+  background: #353535;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500;700&display=swap');
+/* font-family: 'Ubuntu', sans-serif; */
+
+.sheet {
+  background: #2b2b2b;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  padding: 3em;
+}
+
+.text {
+  margin-bottom: 2em;
+}
+
+.photo {
+  width: 25%;
+  margin-bottom: 2em;
+}
+
+.print_button {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  align-self: flex-end;
+  text-decoration: none;
+  color: #a3bfda;
+	background:#86517f;
+	padding: 0.5em 0;
+  text-align: center;
+  display: block;
+  width: 25%;
+  cursor: pointer;
+}
+
+.definition {
+  color: #b53826;
+}
+
+.character {
+  color: #648250;
+}
+
+.init {
+  color: #91089a;
+}
+
+.self {
+  color: #86517f;
+}
+
+.links {
+  color: #a3bfda;
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .sheet {
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+  }
+  .photo {
+    width: 50%;
+    margin-bottom: 1em;
+    order: -1;
+  }
+  .text {
+    line-height: 1.2;
+    font-size: 0.85em;
+    margin-bottom: 1em;
+  }
+  .print_button {
+    width: 50%;
+    display: block;
+  }
+  .button {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+  .sheet {
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+  }
+  .photo {
+    width: 40%;
+    margin-bottom: 2em;
+    order: -1;
+  }
+  .text {
+    line-height: 1.4;
+    margin-bottom: 2em;
+  }
+  .print_button {
+    width: 40%;
+    display: block;
+  }
+  .button {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1048px) and (max-width: 1824px) and (orientation: landscape) {
+  .sheet {
+    margin: 0 auto;
+    width: 75%;
+  }
+  .photo {
+    width: 30%;
+  }
+  .button {
+    width: 30%;
+  }
+}
+
+@media print {
+  .sheet {
+    background: none;
+    margin: 0;
+    height: 297mm;
+    width: 210mm;
+    padding: 10mm 10mm 10mm 20mm;
+    position: relative;
+  }
+  body {
+    color: #000;
+  }
+  .links {
+    color: #000;
+  }
+  .definition,
+  .character,
+  .init,
+  .self {
+    color: darkgrey;
+  }
+  .button {
+    display: none;
+  }
+  .photo {
+    position: absolute;
+    right: 10mm;
+    top: 10mm;
+  }
+  .text {
+    position: absolute;
+    top: 10mm;
+    margin-right: 10mm;
+  }
+}
